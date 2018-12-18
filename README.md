@@ -213,7 +213,7 @@ setSleepDelayTime(int min)
 （3）注册六麦唤醒监听器  
 	 registerMicAwakenListener(@NonNull MicAwakenListener micAwakenListener)
 
-（3）饭注册六麦唤醒监听器  
+（3）反注册六麦唤醒监听器  
 	 unregisterMicAwakenListener(@NonNull MicAwakenListener micAwakenListener)
 
 
