@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/id_first_express"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="firstExpress"
+            android:text="普通"/>
+
+        <Button
+            android:id="@+id/id_second_express"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="secondExpress"
+            android:text="害羞"/>
+
+        <Button
+            android:id="@+id/id_third_express"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="thirdExpress"
+            android:text="高兴"/>
+
+        <Button
+            android:id="@+id/id_fourth_express"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="fourthExpress"
+            android:text="心形"/>
+
+        <Button
+            android:id="@+id/id_fifth_express"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="fifthExpress"
+            android:text="加油"/>
+
+        <Button
+            android:id="@+id/id_sixth_express"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="sixthExpress"
+            android:text="痛苦"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="switchBreathLight"
+            android:text="呼吸灯开关"/>
+
+        <TextView
+            android:layout_marginLeft="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="红色"/>
+
+        <SeekBar
+            android:layout_marginLeft="4dp"
+            android:id="@+id/id_mLightRedValueSb"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:max="255"/>
+
+        <TextView
+            android:layout_marginLeft="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="绿色"/>
+
+        <SeekBar
+            android:layout_marginLeft="4dp"
+            android:id="@+id/id_mLightGreenValueSb"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:max="255"/>
+
+        <TextView
+            android:layout_marginLeft="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="蓝色"/>
+
+        <SeekBar
+            android:layout_marginLeft="4dp"
+            android:id="@+id/id_mLightBlueValueSb"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:max="255"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/id_head_angle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="当前头部角度：90"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_marginLeft="4dp"
+            android:id="@+id/id_head_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="头部运动速度:rpm"
+            android:textSize="16sp" />
+
+        <Button
+            android:layout_marginLeft="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="headTurnLeft"
+            android:text="左转到0度"/>
+
+        <Button
+            android:layout_marginLeft="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="headTurnRight"
+            android:text="右转到180度"/>
+
+        <Button
+            android:layout_marginLeft="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="headTurnForward"
+            android:text="回正"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/id_BatteryStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="正在放电"/>
+
+        <TextView
+            android:layout_marginLeft="8dp"
+            android:id="@+id/id_BatteryCurrent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="电池电流（mA）:"/>
+
+        <TextView
+            android:layout_marginLeft="8dp"
+            android:id="@+id/id_BatteryVoltage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="电池电压（mV）:"/>
+
+        <TextView
+            android:layout_marginLeft="8dp"
+            android:id="@+id/id_BatteryGasGauge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="电池电量(mAH):"/>
+
+        <TextView
+            android:layout_marginLeft="8dp"
+            android:id="@+id/id_BatteryTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="电池温度（℃）:"/>
+
+        <TextView
+            android:layout_marginLeft="8dp"
+            android:id="@+id/id_BatteryGasGaugePercent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="电池电量（%）:"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/id_red_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="未检测到人体"/>
+
+
+        <TextView
+            android:layout_marginLeft="8dp"
+            android:id="@+id/id_shark_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="机器人处于非震动"/>
+
+        <TextView
+            android:layout_marginLeft="8dp"
+            android:id="@+id/id_door_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="票仓门打开"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="openDoor"
+            android:text="打开仓门" />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:onClick="queryMainVersion"
+        android:text="查询主控板版本号" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="closePage"
+        android:text="回到主页"
+        />
+
+
+</LinearLayout>

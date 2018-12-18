@@ -1,0 +1,39 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    defaultConfig {
+        applicationId "com.szyh.iwaasrosdksample"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "com.android.support:appcompat-v7:$rootProject.v4Version"
+    implementation(name: 'LotteryRosSDK-release-1.0', ext: 'aar')
+    implementation 'com.alibaba:fastjson:1.1.70.android'
+    implementation 'com.orhanobut:logger:1.15'
+
+    //内存泄漏测试
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.1'
+    debugImplementation 'com.github.moduth:blockcanary-android:1.2.1'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+    releaseImplementation 'com.github.moduth:blockcanary-no-op:1.2.1'
+//    compile project(path: ':LotteryRosSDK')
+}
