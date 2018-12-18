@@ -42,21 +42,45 @@ dependencies {
 # 功能说明 #
 ## 功能模块 ##
 ### 主控板通信模块 ###
-相关API全部封装在RobotOperationMotion类，使用的时候可以通过工厂方法RobotOperationFactory.createRobotOperation(RobotOperationMotion.class)或者直接new 出对象，在调用相应的方法。	
-（1）前进  
-	goAhead()或者goAhead(RobotCallback robotCallback)  
+相关API全部封装在RobotRosApi类，使用的时候可以通过RobotRosApi.get()获取对象，再调用相应的方法。	
 
-（2）后退  
-	goBack()或者goBack(RobotCallback robotCallback)  
+查询主控版本信息  
+	DeviceVersion queryMainBroadVersion(boolean isReQuery) 	
+DeviceVersion 属性说明
+        type:版本号类型
+	version:版本号,主版本.次版本.修订版本号
+	revisionDate:修订日期年月日（2018-9-1）	
 
-（3）左转  
-	turnLeft()或者turnLeft(RobotCallback robotCallback)  
+添加电池信息监听器  
+	addBatteryStatusListener(BatteryInfoListener listener) 
+删除电池信息监听器   
+	removeBatteryStatusListener(BatteryInfoListener listener)
+BatteryInfo 属性说明
+        mChargeStatus: 充电状态，1表示充电中，0表示未充电
+	mBatteryCurrent:电池电流mA
+	mBatteryVoltage:电池电压mV		
+	mBatteryGasGauge:电池电量mAH
+	mBatteryTemperature:电池温度 ℃
+	mBatteryGasGaugePercent:电池电量百分比%
+	
+添加呼吸灯信息监听器  
+	addBreathLightInfoListener(BreathLightInfoListener listener) 
 
-（4）右转  
-	turnRight()或者turnRight(RobotCallback robotCallback)  
+删除呼吸灯信息监听器  
+	removeBreathLightInfoListener(BreathLightInfoListener listener) 
 
-（5）停止  
-	stop()或者stop(RobotCallback robotCallback)  
+添加头部运动信息监听器  
+	addHeadInfoListener(HeadInfoListener listener) 
+
+删除头部运动信息监听器  
+	removeHeadInfoListener(HeadInfoListener listener) 
+
+添加传感器信息监听器  
+	addSensorStatusListener(SensorStatusListener listener)
+
+删除传感器信息监听器  
+	removeSensorStatusListener(SensorStatusListener listener) 
+	
 
 （6）直接控制  
 	直接用sendMotionMessage(float v, float w, RobotCallback robotCallback)方法。  
