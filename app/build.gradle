@@ -26,7 +26,8 @@ repositories {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "com.android.support:appcompat-v7:$rootProject.v4Version"
-    implementation(name: 'LotteryRosSDK-release-1.0', ext: 'aar')
+    implementation(name: 'LotteryRosSDK-release-1.0.1', ext: 'aar')
+//    implementation project(':LotteryRosSDK')
     implementation 'com.alibaba:fastjson:1.1.70.android'
     implementation 'com.orhanobut:logger:1.15'
 
@@ -35,5 +36,4 @@ dependencies {
     debugImplementation 'com.github.moduth:blockcanary-android:1.2.1'
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
     releaseImplementation 'com.github.moduth:blockcanary-no-op:1.2.1'
-//    compile project(path: ':LotteryRosSDK')
 }

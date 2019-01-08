@@ -1,5 +1,6 @@
 package com.szyh.iwaarossdksample;
 
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,10 +20,11 @@ import com.szyh.lotterysdk.sdk.ros.interfaces.listener.BatteryInfoListener;
 import com.szyh.lotterysdk.sdk.ros.interfaces.listener.BreathLightInfoListener;
 import com.szyh.lotterysdk.sdk.ros.interfaces.listener.HeadInfoListener;
 import com.szyh.lotterysdk.sdk.ros.interfaces.listener.MainBroadStatusListener;
+import com.szyh.lotterysdk.sdk.ros.interfaces.listener.McuUpdateListener;
 import com.szyh.lotterysdk.sdk.ros.interfaces.listener.SensorStatusListener;
 
 public class RosDemoActivity extends AppCompatActivity implements BatteryInfoListener, MainBroadStatusListener,
-        SeekBar.OnSeekBarChangeListener, BreathLightInfoListener, SensorStatusListener, HeadInfoListener{
+        SeekBar.OnSeekBarChangeListener, BreathLightInfoListener, SensorStatusListener, HeadInfoListener, McuUpdateListener{
 
     private static final String TAG = "RosDemoActivity";
 
@@ -84,6 +86,7 @@ public class RosDemoActivity extends AppCompatActivity implements BatteryInfoLis
             RobotRosApi.get().removeHeadInfoListener(this);
             RobotRosApi.get().removeBatteryStatusListener(this);
             RobotRosApi.get().removeSensorStatusListener(this);
+            RobotRosApi.get().unRegisterMcuUpdateListener();
         }
     }
 
@@ -215,4 +218,30 @@ public class RosDemoActivity extends AppCompatActivity implements BatteryInfoLis
         headSpeed.setText("头部运动速度:rpm: " +  headInfo.getSpeed());
     }
 
+    public void mcuUpdate(View view){
+        String path = Environment.getExternalStorageDirectory()
+                .getAbsolutePath() + "/LotteryTicketMcuApp_120515181225.bin/";
+
+        RobotRosApi.get().mcuUpdate(path, this);
+    }
+
+    @Override
+    public void onProgress(int progress) {
+        Log.i(TAG, "mcu_update onProgress: " + progress);
+    }
+
+    @Override
+    public void onUpdateInfo(String info) {
+        Log.i(TAG, "mcu_update onUpdateInfo: " + info);
+    }
+
+    @Override
+    public void onUpdateComplete() {
+        Log.i(TAG, "mcu_update onUpdateComplete");
+    }
+
+    @Override
+    public void onUpdateError(String error) {
+        Log.i(TAG, "mcu_update onUpdateError error: " + error);
+    }
 }
