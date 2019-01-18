@@ -159,7 +159,7 @@ setSleepDelayTime(int min)
 	boolean isTicketTriggering()
 
 （5）初始化出票机版本出票状态, 开机时候和明确知道出票没有正在出票时候可以调用
-	 resetTicketTriggering() 
+	resetTicketTriggering() 
 
 （6）出票 count: 出票数量，TicketOutResult 出票结果回调  
 	 triggerTicketOut(int count, TicketOutResult result) 
