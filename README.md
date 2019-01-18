@@ -154,11 +154,12 @@ setSleepDelayTime(int min)
 	 repairTD()   
 
 （3）查询出票机版本号  
-	 queryVersion()   
+	 queryVersion()  
+	 
 （4）分票器业务状态, true 标识出票机正在进行某次出票业务，需要等待TicketOutResult中的回调方法，才能再次调用出票方法  
 	boolean isTicketTriggering()
 
-（5）初始化出票机版本出票状态, 开机时候和明确知道出票没有正在出票时候可以调用  
+（5）初始化出票机版本出票状态, 开机时候和明确知道出票机没有正在出票时候可以调用  
 	resetTicketTriggering() 
 
 （6）出票 count: 出票数量，TicketOutResult 出票结果回调  
