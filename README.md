@@ -147,16 +147,15 @@ setSleepDelayTime(int min)
 ### 分票器模块 ###
 相关API全部封装在RobotTicketApi类，使用的时候可以通过RobotTicketApi.get()获取对象，再调用相应的方法。
 	 
-（1）分票器设备是否被打开  
+（1）分票器设备是否被打开, 标识跟分票器设备是否建立正常通信  
 	boolean isOpenDev()  
 
-（2）修复出票机  
+（2）修复出票机（解决出票机在某些情况下的出票失败， 如卡纸）
 	 repairTD()   
 
 （3）查询出票机版本号  
 	 queryVersion()   
-
-（4）分票器业务状态  
+（4）分票器业务状态, true 标识出票机正在进行某次出票业务，需要等待TicketOutResult中的回调方法，才能再次调用 triggerTicketOut(int count, TicketOutResult result) 方法启动出票
 	boolean isTicketTriggering()
 
 （5）初始化出票机版本出票状态  
