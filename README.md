@@ -171,13 +171,13 @@ setSleepDelayTime(int min)
 （8）停止出票  
 	 stopTriggerOut()
 
-（8）获取分票器接触头纸张状态  
+（9）获取分票器接触头纸张状态  
      getTicketStatus();
 
-（8）设置票种  
+（10）设置票种  
      setTicketType(byte type)
 
-（8）升级分票器固件  
+（11）升级分票器固件  
      updateFirmware(String type, String path, TDUpdateListener listener)
 
 ### 扫描头模块 ###
@@ -204,16 +204,16 @@ setSleepDelayTime(int min)
 （3）增强某一序号麦的拾音效果  
 	 enhanceBeam(int micIndex) 
 
-（3）重置  
+（4）重置  
 	 reset() 
 
-（3）设置唤醒 false 表示关闭唤醒，true表示开启唤醒  
+（5）设置唤醒 false 表示关闭唤醒，true表示开启唤醒  
 	 enableAwaken(boolean enable) 
 
-（3）注册六麦唤醒监听器  
+（6）注册六麦唤醒监听器  
 	 registerMicAwakenListener(@NonNull MicAwakenListener micAwakenListener)
 
-（3）反注册六麦唤醒监听器  
+（7）反注册六麦唤醒监听器  
 	 unregisterMicAwakenListener(@NonNull MicAwakenListener micAwakenListener)
 
 
