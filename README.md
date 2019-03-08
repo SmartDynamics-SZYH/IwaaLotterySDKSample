@@ -4,7 +4,7 @@
 IwaaLotterySDK 提供主控板通信，六麦，分票器和扫描头相关功能；  
 
 ## 运行基础 ###
-1. 机器人必须先安装LotterySdk-release-1.0.apk，提供底层服务能力   
+1. 机器人必须先安装LotterySdk-release-1.0.2.apk，提供底层服务能力   
 
 
 ## 集成步骤说明 ###
