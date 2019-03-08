@@ -178,7 +178,7 @@ setSleepDelayTime(int min)
      getTicketStatus();
 
 	DispenserStatus 属性说明
-	mLackStatus: 通道票纸状态: 0x00通道缺纸，0x01通道缺纸
+	mLackStatus: 通道状态: 0x00有纸，0x01缺纸
 
 （10）设置票种  
      setTicketType(byte type)
