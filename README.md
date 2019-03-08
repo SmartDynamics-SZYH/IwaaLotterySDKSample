@@ -144,6 +144,9 @@ setSleepDelayTime(int min)
 停止头部运行  
 	stopHeadLoop()
 
+关机  
+	switchPowerRelayCtrl()
+	
 ### 分票器模块 ###
 相关API全部封装在RobotTicketApi类，使用的时候可以通过RobotTicketApi.get()获取对象，再调用相应的方法。
 	 
