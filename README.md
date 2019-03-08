@@ -146,7 +146,10 @@ setSleepDelayTime(int min)
 
 关机  
 	switchPowerRelayCtrl()
-	
+
+升级mcu 主控板程序  
+	mcuUpdate(String path, McuUpdateListener listener)
+
 ### 分票器模块 ###
 相关API全部封装在RobotTicketApi类，使用的时候可以通过RobotTicketApi.get()获取对象，再调用相应的方法。
 	 
