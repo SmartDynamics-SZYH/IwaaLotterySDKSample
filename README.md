@@ -182,7 +182,8 @@ setSleepDelayTime(int min)
 
 （10）设置票种  
      setTicketType(byte type)
-     	type 说明
+
+	type 说明
 	0x01: 2元票 51mm
 	0x02: 3元票 64mm
 	0x03: 10元票 152mm
