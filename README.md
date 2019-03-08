@@ -1,4 +1,4 @@
-# 神州云海IwaaLotterySDK集成说明文档V1.0.0 #
+# 神州云海IwaaLotterySDK集成说明文档V1.0.2 #
 ## 概述 ##
 本文档是在Android 5.1系统上，Android程序集成彩票机器人相关功能SDK的说明文档。    
 IwaaLotterySDK 提供主控板通信，六麦，分票器和扫描头相关功能；  
