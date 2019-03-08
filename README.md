@@ -189,8 +189,11 @@ setSleepDelayTime(int min)
 	0x03: 10元票 152mm
 	0x04: 20元票 204mm
 	0x05: 30元票 254mm
-	
-（11）升级分票器固件  
+
+（11）设置票长 设置票长当前支持 0x03(10元票), 单位毫米  
+     setTicketLength(int mm)
+
+（12）升级分票器固件  
      updateFirmware(String type, String path, TDUpdateListener listener)
 
 ### 扫描头模块 ###
