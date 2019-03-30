@@ -157,12 +157,18 @@ DeviceVersion queryMainBroadVersion(boolean isReQuery)
 
 更新MCU进入休眠的时间  
 	updateMcuSleepTime(int hour, int minute, int second)
-
+	
+更新MCU退出休眠的时间  
+	updateMcuExitTime(int hour, int minute, int second)
+	
 定时开关机模式下，满足条件下，延时关机的时间设置（到达定时时间，主控板根据该时间设置，提前通知应用层）  
 	setSleepDelayTime(int min)
 
 执行休眠操作开关，设置true后，即使满足休眠条件，也不执行休眠动作 表示休眠模式阻止，false 表示休眠模式开始  
 	exeSleepSwitch(boolean isOpen)
+	
+获取电池版本信息 66：表示带电池, 67表示不带电池  
+	getBatteryFlag(int hour, int minute, int second)	
 	
 ### 分票器模块 ###
 相关API全部封装在RobotTicketApi类，使用的时候可以通过RobotTicketApi.get()获取对象，再调用相应的方法。
