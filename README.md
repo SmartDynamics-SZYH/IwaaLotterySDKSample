@@ -168,7 +168,7 @@ DeviceVersion queryMainBroadVersion(boolean isReQuery)
 	exeSleepSwitch(boolean isOpen)
 	
 获取电池版本信息 66：表示带电池, 67表示不带电池  
-	getBatteryFlag(int hour, int minute, int second)	
+	getBatteryFlag()	
 	
 ### 分票器模块 ###
 相关API全部封装在RobotTicketApi类，使用的时候可以通过RobotTicketApi.get()获取对象，再调用相应的方法。
