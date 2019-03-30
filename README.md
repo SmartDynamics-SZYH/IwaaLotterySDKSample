@@ -138,6 +138,20 @@ DeviceVersion queryMainBroadVersion(boolean isReQuery)
 校验MCU时间,把当前安卓板时间同步给MCU  
 	syncMcuTime()
 	
+获取定时关机设置  
+	SleepConfigBean getSleepConfig() 
+
+	SleepConfigBean 属性说明
+	mEnableTimePwrCtr: 1表示开启定时关机，0表示没有开启定时关机
+	mEnterSleepHour: 进入定时关机 时
+	mEnterSleepMinute: 进入定时关机 分
+	mEnterSleepSecond: 进入定时关机 秒
+	mExitSleepHour: 退出定时关机 时
+	mExitSleepMinute: 退出定时关机 分
+	mExitSleepSecond: 退出定时关机 秒
+	mEnableChargePowerCtr: 1表示开启断电关机，0表示没有开启断电关机（带电池版本）
+	mEnterSleepDelayTime: 设置时间到达后，延时多久关机（默认5min 单位 min）
+	
 设置关机模式 mode： 0 正常关机模式 1 断电关机模式 2 定时关机模式  
 	sleepModeChange(int mode)
 
