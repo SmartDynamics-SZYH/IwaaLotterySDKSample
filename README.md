@@ -102,12 +102,6 @@ DeviceVersion queryMainBroadVersion(boolean isReQuery)
 	sharkStatus: 机器人震动状态， 1表示感应到机器在震动，0表示未感应到机器在震动
 	doorStatus: 票仓门状态， 1表示票仓门关闭，0表示票仓门打开（特别该项注意1，0值的含义）
 
-定时开关机模式下，满足条件下，延时关机的时间设置（到达定时时间，主控板根据该时间设置，提前通知应用层）  
-setSleepDelayTime(int min)
-
-执行休眠操作开关，设置true后，即使满足休眠条件，也不执行休眠动作 表示休眠模式阻止，false 表示休眠模式开始  
-	exeSleepSwitch(boolean isOpen)
-
 向主控板发送二维码扫描成功标志  
 	sendTickEncodeReadFlag() 
 
@@ -116,9 +110,6 @@ setSleepDelayTime(int min)
 
 切换表情屏的表情  
 	showExpressionById(int id)
-
-设置关机模式 mode： 0 正常关机模式 1 断电关机模式 2 定时关机模式  
-	sleepModeChange(int mode)
 
 二维码触发器控制  
 	switchBCTrigCtrl(boolean isOpen)
@@ -129,14 +120,8 @@ setSleepDelayTime(int min)
 电磁锁开关  
 	switchElectLockCtrl(boolean isOpen)
 
-校验MCU时间,把当前安卓板时间同步给MCU  
-	syncMcuTime()
-
 头部运动到某个角度  
 	turnHeadTo(int angle)
-
-更新MCU进入休眠的时间  
-	updateMcuSleepTime(int hour, int minute, int second)
 
 开始头部运行  
 	startHeadLoop()
@@ -150,6 +135,21 @@ setSleepDelayTime(int min)
 升级mcu 主控板程序  
 	mcuUpdate(String path, McuUpdateListener listener)
 
+校验MCU时间,把当前安卓板时间同步给MCU  
+	syncMcuTime()
+	
+设置关机模式 mode： 0 正常关机模式 1 断电关机模式 2 定时关机模式  
+	sleepModeChange(int mode)
+
+更新MCU进入休眠的时间  
+	updateMcuSleepTime(int hour, int minute, int second)
+
+定时开关机模式下，满足条件下，延时关机的时间设置（到达定时时间，主控板根据该时间设置，提前通知应用层）  
+	setSleepDelayTime(int min)
+
+执行休眠操作开关，设置true后，即使满足休眠条件，也不执行休眠动作 表示休眠模式阻止，false 表示休眠模式开始  
+	exeSleepSwitch(boolean isOpen)
+	
 ### 分票器模块 ###
 相关API全部封装在RobotTicketApi类，使用的时候可以通过RobotTicketApi.get()获取对象，再调用相应的方法。
 	 
